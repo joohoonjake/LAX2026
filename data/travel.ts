@@ -48,7 +48,8 @@ export const accommodations = [
     checkIn: '7/24 (금)',
     checkOut: '7/26 (일) 오전',
     nights: 2,
-    mapQuery: 'Twentynine Palms, CA',
+    address: '55795 Acoma Terrace, Yucca Valley, CA 92284',
+    mapQuery: '55795 Acoma Terrace, Yucca Valley, CA 92284',
     highlight: false,
   },
   {
