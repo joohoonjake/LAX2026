@@ -13,7 +13,7 @@ export default function FlightPage() {
           ✈️ 비행기표
         </h1>
         <p className="text-neutral-500 text-sm md:text-base">
-          아시아나항공 · Asiana Airlines
+          아시아나항공 · Asiana Airlines · 인천 제1터미널 출발
         </p>
       </div>
 
@@ -22,10 +22,13 @@ export default function FlightPage() {
         {/* 가는 편 */}
         <InfoCard highlight={true}>
           <div className="space-y-4">
-            {/* Badge */}
-            <div>
+            {/* Badges */}
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="bg-[#0F6E56]/10 text-[#0F6E56] text-xs font-medium px-2 py-0.5 rounded-full">
                 가는 편
+              </span>
+              <span className="bg-amber-100 text-amber-700 text-xs font-medium px-2 py-0.5 rounded-full">
+                비즈니스
               </span>
             </div>
 
@@ -69,28 +72,19 @@ export default function FlightPage() {
             <div className="text-sm text-neutral-500">
               {outbound.flightNumber} · {outbound.aircraft}
             </div>
-
-            {/* Button */}
-            <div className="pt-1">
-              <a
-                href="https://flyasiana.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white text-sm rounded-lg hover:bg-neutral-700 transition-colors"
-              >
-                ✈️ 아시아나 앱
-              </a>
-            </div>
           </div>
         </InfoCard>
 
         {/* 오는 편 */}
         <InfoCard>
           <div className="space-y-4">
-            {/* Badge */}
-            <div>
+            {/* Badges */}
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="bg-neutral-100 text-neutral-600 text-xs font-medium px-2 py-0.5 rounded-full">
                 오는 편
+              </span>
+              <span className="bg-amber-100 text-amber-700 text-xs font-medium px-2 py-0.5 rounded-full">
+                비즈니스
               </span>
             </div>
 
@@ -134,43 +128,9 @@ export default function FlightPage() {
             <div className="text-sm text-neutral-500">
               {ret.flightNumber} · {ret.aircraft}
             </div>
-
-            {/* Button */}
-            <div className="pt-1">
-              <a
-                href="https://flyasiana.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white text-sm rounded-lg hover:bg-neutral-700 transition-colors"
-              >
-                ✈️ 아시아나 앱
-              </a>
-            </div>
           </div>
         </InfoCard>
       </div>
-
-      {/* 체크인 유의사항 */}
-      <InfoCard title="체크인 유의사항">
-        <ul className="space-y-2 text-sm text-neutral-700">
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            출발 3시간 전까지 공항 도착 권장
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            국제선 수하물: 위탁 23kg × 2개 (이코노미 기준, 확인 필요)
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            아기 동반 시 탑승구 먼저 확인
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            온라인 체크인: 출발 24시간 전부터 가능
-          </li>
-        </ul>
-      </InfoCard>
     </div>
   )
 }

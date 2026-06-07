@@ -46,83 +46,145 @@ export default function LaJollaPage() {
         <div className="mt-4 text-sm text-neutral-500">
           총 {acc.nights}박
         </div>
-      </InfoCard>
-
-      {/* Airbnb details */}
-      <InfoCard highlight={true} title="Airbnb 숙소">
-        <div className="space-y-3">
-          <div className="text-sm text-neutral-700">
-            주소: 919 Tourmaline St, San Diego, CA 92109
-          </div>
-          <div className="text-sm font-medium text-[#0F6E56]">
-            &ldquo;여기가 메인. 느긋하게 쉬는 곳.&rdquo;
-          </div>
-          <div className="text-sm text-neutral-500">
-            8박 일정: 7/26(일) ~ 8/3(월)
-          </div>
+        <div className="mt-4 pt-4 border-t border-neutral-100 space-y-2">
+          <a
+            href={`https://maps.google.com/maps?q=${encodeURIComponent(acc.mapQuery)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start gap-2 text-sm text-neutral-700 hover:text-[#0F6E56] transition-colors"
+          >
+            <span className="flex-shrink-0 mt-0.5">📍</span>
+            <span className="underline underline-offset-2">{acc.address}</span>
+          </a>
           {acc.bookingUrl && (
-            <div className="pt-1">
-              <a
-                href={acc.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white text-sm rounded-lg hover:bg-neutral-700 transition-colors"
-              >
-                Airbnb 예약 확인
-              </a>
-            </div>
+            <a
+              href={acc.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-[#FF5A5F] hover:text-[#e0484d] transition-colors"
+            >
+              <span className="flex-shrink-0">🏠</span>
+              <span className="underline underline-offset-2">Airbnb 예약 확인 →</span>
+            </a>
           )}
         </div>
       </InfoCard>
 
-      {/* La Jolla intro */}
-      <InfoCard title="라호야 (La Jolla) 소개">
-        <ul className="space-y-2 text-sm text-neutral-700">
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            샌디에고 북쪽 해안 마을, 절벽과 바다 전망으로 유명
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            인근 명소: La Jolla Cove (물개 서식지), 토레이 파인스 해변, 버드록 해변
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            919 Tourmaline St는 Pacific Beach 지역 — 해변 바로 근처
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            슈퍼마켓: Vons, Ralph&apos;s 인근 위치
-          </li>
-        </ul>
-      </InfoCard>
-
-      {/* 8-day schedule */}
-      <InfoCard title="8일 일정 (7/26 ~ 8/2)">
-        <ul className="space-y-2 text-sm text-neutral-700">
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            특별 계획 없이 느긋하게 지내는 것이 목표
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            해변 산책, 인근 카페/레스토랑 탐방
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            샌디에고 동물원, 시월드 등 당일치기 가능
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            아기와 함께 편하게 쉬는 베이스 캠프
-          </li>
-        </ul>
-      </InfoCard>
-
-      {/* Map */}
+      {/* Map embed */}
       <InfoCard title="위치">
-        <MapEmbed query={acc.mapQuery} height={300} />
+        <MapEmbed query={acc.mapQuery} height={260} />
       </InfoCard>
+
+      {/* Villa guide */}
+      <InfoCard title="별장 이용 안내">
+        <div className="space-y-5">
+          {/* WiFi */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>📶</span> 와이파이
+            </div>
+            <div className="pl-6 space-y-0.5 text-sm text-neutral-600">
+              <div>네트워크: <span className="font-medium text-neutral-800">919 Divine</span></div>
+              <div>비밀번호: <span className="font-medium text-neutral-800">Sandalwood</span></div>
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* TV */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>📺</span> TV
+            </div>
+            <div className="pl-6 text-sm text-neutral-600">
+              Sony 스마트 리모컨으로 Netflix, HBO, DirecTV Go 등의 앱 이용
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Speaker */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🔊</span> 스피커
+            </div>
+            <div className="pl-6 text-sm text-neutral-600">
+              주방에 Bose 블루투스 스피커가 있으며, 원하는 곳으로 옮겨서 사용 가능
+              <div className="mt-1 flex items-start gap-1.5 text-amber-700 bg-amber-50 rounded-md px-2.5 py-1.5">
+                <span className="flex-shrink-0">⚠️</span>
+                <span>해 진 후에는 데크에서 큰 음악을 틀지 마세요. 이웃들이 싫어합니다.</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Hot water */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🚿</span> 온수
+            </div>
+            <div className="pl-6 text-sm text-neutral-600">
+              탱크리스(즉시 가열) 방식 — 한낮이나 오전 8시 이전에는 따뜻해지기까지 1분 정도 기다려 주세요
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Fridge */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🧊</span> 냉장고
+            </div>
+            <div className="pl-6 text-sm text-neutral-600 space-y-0.5">
+              <div>정수 및 제빙 기능 있음</div>
+              <div>오른쪽 아래 칸: 냉장실 / 왼쪽 아래 칸: 냉동실</div>
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Beach gear */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🏖️</span> 해변 장비 <span className="text-xs font-normal text-neutral-400">(차고에 있음)</span>
+            </div>
+            <div className="pl-6 text-sm text-neutral-600">
+              파라솔, 의자, 서핑보드, 부기보드 모두 자유롭게 사용하세요!
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Bikes */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🚲</span> 자전거 &amp; 탈것
+            </div>
+            <div className="pl-6 text-sm text-neutral-600 space-y-0.5">
+              <div>자전거, 스케이트보드, 전동 스쿠터 이용 가능</div>
+              <div>스쿠터 전원: 바닥 왼쪽 면에서 켜세요</div>
+              <div className="flex items-center gap-1 text-amber-700">
+                <span>⚠️</span> 항상 헬멧을 착용하세요!
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* BBQ */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🔥</span> 가스레인지 &amp; BBQ
+            </div>
+            <div className="pl-6 text-sm text-neutral-600 space-y-0.5">
+              <div>둘 다 천연가스를 사용하며 효율이 좋습니다</div>
+              <div>BBQ 사용법: 점화 전에 뒤쪽으로 손을 뻗어 노란색 핸들을 BBQ 쪽으로 돌린 후 불을 켜세요</div>
+            </div>
+          </div>
+        </div>
+      </InfoCard>
+
     </div>
   )
 }

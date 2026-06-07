@@ -43,31 +43,33 @@ export default function JoshuaTreePage() {
         <div className="mt-4 text-sm text-neutral-500">
           총 {acc.nights}박
         </div>
-      </InfoCard>
-
-      {/* Accommodation info */}
-      <InfoCard title="숙소 정보">
-        <ul className="space-y-2 text-sm text-neutral-700">
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            위치: 트웬티나인 팜스 인근 (Joshua Tree National Park 근처)
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            2박 일정: 7/24(금) 도착 당일 체크인, 7/26(일) 오전 체크아웃 후 샌디에고로 이동
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
+        <div className="mt-4 pt-4 border-t border-neutral-100 space-y-2">
+          <a
+            href={`https://maps.google.com/maps?q=${encodeURIComponent(acc.mapQuery)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start gap-2 text-sm text-neutral-700 hover:text-[#0F6E56] transition-colors"
+          >
+            <span className="flex-shrink-0 mt-0.5">📍</span>
+            <span className="underline underline-offset-2">{acc.address}</span>
+          </a>
+          {acc.bookingUrl && (
             <a
-              href="https://www.airbnb.co.kr/rooms/44433478?guests=1&adults=1&s=67&unique_share_id=382566c6-d4ca-4ca7-9cf0-d236d92d472a"
+              href={acc.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0F6E56] underline underline-offset-2 hover:text-[#0a5240]"
+              className="flex items-center gap-2 text-sm text-[#FF5A5F] hover:text-[#e0484d] transition-colors"
             >
-              Airbnb 예약 페이지 →
+              <span className="flex-shrink-0">🏠</span>
+              <span className="underline underline-offset-2">Airbnb 예약 확인 →</span>
             </a>
-          </li>
-        </ul>
+          )}
+        </div>
+      </InfoCard>
+
+      {/* Map embed */}
+      <InfoCard title="위치">
+        <MapEmbed query={acc.mapQuery} height={260} />
       </InfoCard>
 
       {/* Directions */}
@@ -172,46 +174,6 @@ export default function JoshuaTreePage() {
         </div>
       </InfoCard>
 
-      {/* National Park info */}
-      <InfoCard title="조슈아 트리 국립공원">
-        <ul className="space-y-2 text-sm text-neutral-700">
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            미국 캘리포니아 남부의 국립공원
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            거대한 조슈아 트리와 바위 지형으로 유명
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            일출/일몰 시간대 방문 추천
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            밤하늘 별 관측 명소 (다크스카이 파크 지정)
-          </li>
-        </ul>
-      </InfoCard>
-
-      {/* Map */}
-      <InfoCard title="위치">
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2 text-sm text-neutral-700">
-            <span>📍</span>
-            <span className="font-medium">{acc.address}</span>
-          </div>
-          <a
-            href={`https://maps.google.com/maps?q=${encodeURIComponent(acc.mapQuery)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 flex items-center gap-1.5 text-xs font-medium text-[#0F6E56] border border-[#0F6E56] rounded-full px-3 py-1 hover:bg-[#0F6E56] hover:text-white transition-colors"
-          >
-            구글맵에서 보기 ↗
-          </a>
-        </div>
-        <MapEmbed query={acc.mapQuery} height={300} />
-      </InfoCard>
     </div>
   )
 }

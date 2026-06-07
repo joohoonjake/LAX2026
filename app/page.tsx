@@ -29,6 +29,7 @@ export default function Home() {
             {flights.outbound.flightNumber} / {flights.return.flightNumber}
           </div>
           <div className="text-xs text-neutral-500 mt-0.5">{flights.outbound.aircraft}</div>
+          <div className="text-xs text-amber-600 font-medium mt-0.5">{flights.outbound.cabinClass}</div>
         </InfoCard>
 
         <InfoCard>

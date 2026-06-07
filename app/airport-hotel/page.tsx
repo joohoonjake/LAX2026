@@ -68,7 +68,7 @@ export default function AirportHotelPage() {
         <ol className="space-y-3">
           {[
             '체크아웃 (새벽)',
-            '렌터카 반납 → LAX Budget Parking (8/7 아침)',
+            '렌터카 반납 → Turo 개인렌트 (8/7 아침)',
             '공항 체크인 (출발 3시간 전 권장)',
             'LA 10:40 출발 (OZ201)',
             '인천 8/8 (토) 15:20 도착',

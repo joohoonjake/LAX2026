@@ -9,6 +9,8 @@ export const flights = {
     arrivalNote: '당일 도착',
     flightNumber: 'OZ202',
     aircraft: 'A380',
+    cabinClass: '비즈니스',
+    terminal: '인천 제1터미널',
   },
   return: {
     date: '2026-08-07',
@@ -20,23 +22,24 @@ export const flights = {
     arrivalNote: '익일 8/8 도착',
     flightNumber: 'OZ201',
     aircraft: 'A380',
+    cabinClass: '비즈니스',
   },
 }
 
 export const carRental = {
   vehicle: 'Tesla Model Y 2026 (FSD)',
-  company: 'LAX Budget',
-  pickupLocation: 'LAX Budget Parking',
-  pickupMapQuery: 'LAX Budget Parking, Los Angeles, CA',
+  company: 'Turo 개인렌트',
+  pickupLocation: 'Turo 개인렌트 픽업 장소',
+  pickupMapQuery: 'Los Angeles International Airport, Los Angeles, CA',
   pickupInstructions: [
     '수하물 찾은 후 Arrival level에서 나오기',
-    '표지판 따라 Pink shuttle zones로 이동',
-    'LAX Budget Parking Shuttle 탑승',
-    '셔틀에서 내려 LAX Budget Parking 카운터에서 픽업',
+    'Turo 호스트에게 연락하여 픽업 장소 확인',
+    '호스트와 협의한 장소에서 차량 인수',
+    '차량 상태 확인 후 Turo 앱에서 픽업 완료 처리',
   ],
   pickupDate: '7/24 (금)',
   returnDate: '8/7 (금)',
-  returnNote: '아침 공항 가는 길에 LAX Budget Parking 반납',
+  returnNote: '아침 공항 가는 길에 Turo 개인렌트 반납',
 }
 
 export const accommodations = [
@@ -50,6 +53,7 @@ export const accommodations = [
     nights: 2,
     address: '55795 Acoma Terrace, Yucca Valley, CA 92284',
     mapQuery: '55795 Acoma Terrace, Yucca Valley, CA 92284',
+    bookingUrl: 'https://www.airbnb.co.kr/rooms/44433478?guests=1&adults=1&s=67&unique_share_id=382566c6-d4ca-4ca7-9cf0-d236d92d472a',
     highlight: false,
   },
   {
@@ -60,19 +64,21 @@ export const accommodations = [
     checkIn: '7/26 (일)',
     checkOut: '8/3 (월) 오전',
     nights: 8,
+    address: '919 Tourmaline St, San Diego, CA 92109',
     mapQuery: '919 Tourmaline St, San Diego, CA 92109',
-    bookingUrl: 'https://www.airbnb.com',
+    bookingUrl: 'https://www.airbnb.co.kr/rooms/747060951327292032',
     highlight: true,
     note: '여기가 메인. 느긋하게 쉬는 곳.',
   },
   {
     id: 'disney-hotel',
     emoji: '🏰',
-    name: '디즈니 호텔',
-    subtitle: 'Howard Johnson by Wyndham Anaheim · 1380 S Harbor Blvd',
+    name: '디즈니랜드 호텔',
+    subtitle: 'Howard Johnson by Wyndham Anaheim · 아나하임',
     checkIn: '8/3 (월)',
     checkOut: '8/6 (목) 오전',
     nights: 3,
+    address: '1380 S Harbor Blvd, Anaheim, CA 92802',
     mapQuery: 'Howard Johnson by Wyndham Anaheim, 1380 S Harbor Blvd, Anaheim, CA',
     highlight: false,
     tip: '디즈니랜드까지 도보 8분',
@@ -100,7 +106,7 @@ export type DayEntry = {
 }
 
 export const dailySchedule: DayEntry[] = [
-  { date: '7/24', dayLabel: '(금) 도착', sleeping: '조슈아 트리', memo: '인천 12:40 출발 → LA 08:20 도착 · LAX Budget Parking에서 테슬라 픽업 → 조슈아 트리 체크인', isMovingDay: true },
+  { date: '7/24', dayLabel: '(금) 도착', sleeping: '조슈아 트리', memo: '인천 제1터미널 12:40 출발 (비즈니스) → LA 08:20 도착 · Turo 개인렌트에서 테슬라 픽업 → 조슈아 트리 체크인', isMovingDay: true },
   { date: '7/25', dayLabel: '(토)', sleeping: '조슈아 트리' },
   { date: '7/26', dayLabel: '(일)', sleeping: '샌디에고', memo: '★ 조슈아 트리 체크아웃 → 샌디에고 체크인 (8일 시작)', isMovingDay: true },
   { date: '7/27', dayLabel: '(월)', sleeping: '샌디에고' },
@@ -114,7 +120,7 @@ export const dailySchedule: DayEntry[] = [
   { date: '8/4', dayLabel: '(화)', sleeping: '디즈니 호텔', memo: '🎢 디즈니랜드 노는 날' },
   { date: '8/5', dayLabel: '(수)', sleeping: '디즈니 호텔', memo: '🎢 디즈니랜드 노는 날' },
   { date: '8/6', dayLabel: '(목)', sleeping: 'LAX 공항 호텔', memo: '★ 디즈니 체크아웃 → 공항 호텔 체크인 (차로 직접 이동)', isMovingDay: true },
-  { date: '8/7', dayLabel: '(금) 출발', sleeping: '비행기 (집으로!)', memo: '공항 호텔 체크아웃 · 렌터카 반납 (LAX Budget Parking) → LA 10:40 출발 → 인천 익일(8/8) 15:20 도착 (OZ201)', isMovingDay: true },
+  { date: '8/7', dayLabel: '(금) 출발', sleeping: '비행기 (집으로!)', memo: '공항 호텔 체크아웃 · 렌터카 반납 (Turo 개인렌트) → LA 10:40 출발 (비즈니스) → 인천 익일(8/8) 15:20 도착 (OZ201)', isMovingDay: true },
 ]
 
 export const keyNotes = [

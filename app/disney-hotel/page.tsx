@@ -43,72 +43,93 @@ export default function DisneyHotelPage() {
         <div className="mt-4 text-sm text-neutral-500">
           총 {acc.nights}박
         </div>
-      </InfoCard>
-
-      {/* Hotel info */}
-      <InfoCard title="호텔 정보">
-        <div className="space-y-2 text-sm text-neutral-700">
-          <div>
-            <span className="text-neutral-400 text-xs block mb-0.5">이름</span>
-            <span className="font-medium text-neutral-900">Howard Johnson by Wyndham Anaheim</span>
-          </div>
-          <div>
-            <span className="text-neutral-400 text-xs block mb-0.5">주소</span>
-            <span>1380 S Harbor Blvd, Anaheim, CA 92802</span>
-          </div>
-          <div className="mt-3 text-[#0F6E56] font-medium">
-            🚶 디즈니랜드까지 도보 8분
+        <div className="mt-4 pt-4 border-t border-neutral-100 space-y-2">
+          <a
+            href={`https://maps.google.com/maps?q=${encodeURIComponent(acc.mapQuery)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start gap-2 text-sm text-neutral-700 hover:text-[#0F6E56] transition-colors"
+          >
+            <span className="flex-shrink-0 mt-0.5">📍</span>
+            <span className="underline underline-offset-2">{acc.address}</span>
+          </a>
+          <div className="flex items-center gap-2 text-sm text-[#0F6E56] font-medium">
+            <span>🚶</span>
+            <span>디즈니랜드까지 도보 8분</span>
           </div>
         </div>
       </InfoCard>
 
-      {/* Disneyland tips */}
-      <InfoCard title="디즈니랜드 관람 팁">
-        <ul className="space-y-2 text-sm text-neutral-700">
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            체크인 8/3(월), 8/4(화)·8/5(수) 이틀 디즈니 방문
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            낮에 더우면 호텔로 복귀해 아기 낮잠 재우기
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            저녁에 다시 입장 (멀티데이 티켓은 당일 재입장 가능)
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            Howard Johnson 호텔에서 디즈니랜드 정문까지 도보 약 8분
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            호텔 셔틀 서비스 확인 권장
-          </li>
-        </ul>
-      </InfoCard>
-
-      {/* Surrounding info */}
-      <InfoCard title="주변 정보">
-        <ul className="space-y-2 text-sm text-neutral-700">
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            Downtown Disney: 호텔에서 도보 5분 (쇼핑/레스토랑, 무료입장)
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            California Adventure: 디즈니랜드 바로 옆
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            주차: 호텔 주차 이용 권장 (디즈니 주차는 비쌈)
-          </li>
-        </ul>
-      </InfoCard>
-
-      {/* Map */}
+      {/* Map embed */}
       <InfoCard title="위치">
-        <MapEmbed query={acc.mapQuery} height={300} />
+        <MapEmbed query={acc.mapQuery} height={260} />
+      </InfoCard>
+
+      {/* Disney guide */}
+      <InfoCard title="디즈니랜드 이용 안내">
+        <div className="space-y-5">
+          {/* Schedule */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🎢</span> 방문 일정
+            </div>
+            <div className="pl-6 space-y-0.5 text-sm text-neutral-600">
+              <div>8/4 (화) · 8/5 (수) 이틀 방문</div>
+              <div>체크인 8/3 당일은 이동일이라 방문 없음</div>
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Getting there */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🚶</span> 호텔 → 디즈니랜드
+            </div>
+            <div className="pl-6 text-sm text-neutral-600 space-y-0.5">
+              <div>도보로 약 8분 (Harbor Blvd 따라 북쪽)</div>
+              <div>호텔 셔틀 서비스 운영 여부 체크인 시 확인</div>
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Nap strategy */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>☀️</span> 낮잠 전략
+            </div>
+            <div className="pl-6 text-sm text-neutral-600 space-y-0.5">
+              <div>낮에 더우면 호텔로 돌아와 아기 낮잠 재우기</div>
+              <div>저녁에 다시 입장 — 멀티데이 티켓은 당일 재입장 가능</div>
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Nearby */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🗺️</span> 주변
+            </div>
+            <div className="pl-6 text-sm text-neutral-600 space-y-0.5">
+              <div>Downtown Disney: 도보 5분 (쇼핑·레스토랑, 무료 입장)</div>
+              <div>California Adventure: 디즈니랜드 바로 옆</div>
+            </div>
+          </div>
+
+          <div className="border-t border-neutral-100" />
+
+          {/* Parking */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-800">
+              <span>🚗</span> 주차
+            </div>
+            <div className="pl-6 text-sm text-neutral-600">
+              호텔 주차장 이용 권장 — 디즈니랜드 자체 주차장은 비쌈
+            </div>
+          </div>
+        </div>
       </InfoCard>
     </div>
   )
