@@ -1,12 +1,6 @@
 import InfoCard from '@/components/ui/InfoCard'
-import { flights, carRental, accommodations, dailySchedule, keyNotes, movingDays } from '@/data/travel'
-
-function sleepingColor(sleeping: string): string {
-  if (sleeping.includes('조슈아')) return 'bg-amber-50 text-amber-800'
-  if (sleeping.includes('샌디에고')) return 'bg-blue-50 text-blue-800'
-  if (sleeping.includes('디즈니')) return 'bg-purple-50 text-purple-800'
-  return 'bg-neutral-100 text-neutral-600'
-}
+import DailyScheduleWithDiary from '@/components/ui/DailyScheduleWithDiary'
+import { flights, carRental, accommodations, dailySchedule, movingDays } from '@/data/travel'
 
 export default function Home() {
   return (
@@ -54,40 +48,7 @@ export default function Home() {
         <h2 className="text-lg font-semibold text-neutral-900 mb-4 tracking-tight">
           날짜별 일정
         </h2>
-        <div className="space-y-2">
-          {dailySchedule.map((day) => (
-            <div
-              key={day.date}
-              className={`rounded-xl border p-4 flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 ${
-                day.isMovingDay
-                  ? 'border-l-4 border-[#0F6E56] bg-[#0F6E56]/5 border-r border-t border-b border-neutral-200'
-                  : 'border-neutral-200 bg-white'
-              }`}
-            >
-              {/* Date column */}
-              <div className="flex-shrink-0 w-full sm:w-28">
-                <span className="font-semibold text-sm text-neutral-900">{day.date}</span>
-                <span className="text-xs text-neutral-500 ml-1">{day.dayLabel}</span>
-              </div>
-
-              {/* Sleeping badge */}
-              <div className="flex-shrink-0 sm:w-32">
-                <span
-                  className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full ${sleepingColor(day.sleeping)}`}
-                >
-                  {day.sleeping}
-                </span>
-              </div>
-
-              {/* Memo */}
-              {day.memo && (
-                <div className="text-sm text-neutral-600 flex-1 leading-relaxed">
-                  {day.memo}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+        <DailyScheduleWithDiary schedule={dailySchedule} />
       </section>
 
       {/* Moving days */}
@@ -113,22 +74,6 @@ export default function Home() {
                 )}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Key notes */}
-      <section>
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4 tracking-tight">
-          기억할 것 딱 3가지
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {keyNotes.map((note) => (
-            <InfoCard key={note.title}>
-              <div className="text-2xl mb-2">{note.emoji}</div>
-              <div className="font-semibold text-neutral-900 text-sm mb-1">{note.title}</div>
-              <div className="text-xs text-neutral-500 leading-relaxed">{note.desc}</div>
-            </InfoCard>
           ))}
         </div>
       </section>
