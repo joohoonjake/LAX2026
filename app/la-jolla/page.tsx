@@ -32,7 +32,7 @@ export default function LaJollaPage() {
       </div>
 
       {/* Main info card */}
-      <InfoCard highlight={true}>
+      <InfoCard highlight={false}>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <div className="text-xs text-neutral-400 mb-1">체크인</div>
