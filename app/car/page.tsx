@@ -38,30 +38,14 @@ export default function CarPage() {
       {/* Pickup instructions */}
       <InfoCard title="픽업 방법">
         <ol className="space-y-3">
-          <li className="flex items-start gap-3 text-sm text-neutral-700">
-            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#0F6E56] text-white text-xs font-semibold flex items-center justify-center mt-0.5">
-              1
-            </span>
-            수하물 찾은 후 Arrival level에서 나오기
-          </li>
-          <li className="flex items-start gap-3 text-sm text-neutral-700">
-            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#0F6E56] text-white text-xs font-semibold flex items-center justify-center mt-0.5">
-              2
-            </span>
-            표지판 따라 Pink shuttle zones로 이동
-          </li>
-          <li className="flex items-start gap-3 text-sm text-neutral-700">
-            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#0F6E56] text-white text-xs font-semibold flex items-center justify-center mt-0.5">
-              3
-            </span>
-            LAX Budget Parking Shuttle 탑승
-          </li>
-          <li className="flex items-start gap-3 text-sm text-neutral-700">
-            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#0F6E56] text-white text-xs font-semibold flex items-center justify-center mt-0.5">
-              4
-            </span>
-            셔틀에서 내려 LAX Budget Parking 카운터에서 픽업
-          </li>
+          {carRental.pickupInstructions.map((step, i) => (
+            <li key={i} className="flex items-start gap-3 text-sm text-neutral-700">
+              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#0F6E56] text-white text-xs font-semibold flex items-center justify-center mt-0.5">
+                {i + 1}
+              </span>
+              {step}
+            </li>
+          ))}
         </ol>
       </InfoCard>
 

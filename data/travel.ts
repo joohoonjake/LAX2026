@@ -29,9 +29,10 @@ export const carRental = {
   pickupLocation: 'LAX Budget Parking',
   pickupMapQuery: 'LAX Budget Parking, Los Angeles, CA',
   pickupInstructions: [
-    'Arrival level에서 내리기',
-    'Pink shuttle zones로 이동',
+    '수하물 찾은 후 Arrival level에서 나오기',
+    '표지판 따라 Pink shuttle zones로 이동',
     'LAX Budget Parking Shuttle 탑승',
+    '셔틀에서 내려 LAX Budget Parking 카운터에서 픽업',
   ],
   pickupDate: '7/24 (금)',
   returnDate: '8/7 (금)',

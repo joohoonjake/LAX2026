@@ -44,7 +44,7 @@ export default function Home() {
           <div className="font-semibold text-neutral-900 text-sm md:text-base">
             {accommodations.length}곳
           </div>
-          <div className="text-xs text-neutral-500 mt-0.5">4개 숙소</div>
+          <div className="text-xs text-neutral-500 mt-0.5">{accommodations.length}개 숙소</div>
         </InfoCard>
       </div>
 

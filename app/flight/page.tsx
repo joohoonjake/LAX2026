@@ -124,7 +124,7 @@ export default function FlightPage() {
                 <div className="text-3xl font-bold text-neutral-900 tracking-tight">
                   {ret.arrival}
                 </div>
-                <div className="text-xs text-neutral-500 font-medium mt-0.5">
+                <div className="text-xs text-[#0F6E56] font-medium mt-0.5">
                   {ret.arrivalNote}
                 </div>
               </div>
