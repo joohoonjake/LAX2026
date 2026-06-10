@@ -1,30 +1,5 @@
 import InfoCard from '@/components/ui/InfoCard'
 import MapEmbed from '@/components/ui/MapEmbed'
-import Checklist from '@/components/ui/Checklist'
-
-const disneylandItems = [
-  { id: 'ticket', label: '디즈니랜드 티켓 (앱에서 확인)' },
-  { id: 'sunscreen', label: '선크림 (야외 장시간 체류)' },
-  { id: 'hat', label: '모자 (아기 포함)' },
-  { id: 'stroller', label: '유모차 or 아기띠' },
-  { id: 'snacks', label: '아기 간식 및 물' },
-  { id: 'powerbank', label: '보조배터리 (앱 많이 씀)' },
-  { id: 'clothes', label: '여벌 옷 (아기용)' },
-  { id: 'medicine', label: '상비약 (해열제 등)' },
-]
-
-const packingItems = [
-  { id: 'passport', label: '여권 (아기 포함)' },
-  { id: 'visa', label: 'ESTA (아기 포함)' },
-  { id: 'insurance', label: '여행자 보험 증서' },
-  { id: 'creditcard', label: '해외 카드 (트래블로그 등)' },
-  { id: 'charger', label: '충전기 및 멀티어댑터' },
-  { id: 'baby-formula', label: '분유 / 이유식' },
-  { id: 'diaper', label: '기저귀 (여유분 포함)' },
-  { id: 'baby-med', label: '아기 상비약' },
-  { id: 'airbnb-info', label: 'Airbnb 체크인 정보 확인' },
-  { id: 'flight-checkin', label: '온라인 체크인 완료' },
-]
 
 export default function DisneylandPage() {
   return (
@@ -39,10 +14,33 @@ export default function DisneylandPage() {
 
       {/* Visit info card */}
       <InfoCard highlight={true}>
-        <div className="space-y-1">
+        <div className="space-y-3">
           <div className="text-xs text-neutral-400 mb-1">방문 날짜</div>
-          <div className="text-lg font-semibold text-[#0F6E56]">8/4 (화) · 8/5 (수) — 이틀</div>
-          <div className="text-sm text-neutral-500">Howard Johnson 호텔에서 도보 8분</div>
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-semibold text-[#0F6E56] w-16">8/4 (화)</span>
+              <span className="text-sm text-neutral-700">Disneyland Park</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-semibold text-[#0F6E56] w-16">8/5 (수)</span>
+              <span className="text-sm text-neutral-700">Disney California Adventure Park</span>
+            </div>
+          </div>
+          <div className="text-sm text-neutral-500 pt-1">Howard Johnson 호텔에서 도보 8분</div>
+        </div>
+      </InfoCard>
+
+      {/* Ticket info card */}
+      <InfoCard title="보유 티켓">
+        <div className="space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="text-lg">🎫</span>
+            <div className="space-y-1">
+              <div className="text-sm font-semibold text-neutral-800">2-Day Ticket with Lightning Multi Pass</div>
+              <div className="text-sm text-neutral-600">어른 2명</div>
+              <div className="text-sm text-neutral-500">딸 (2세 미만) — 무료 입장</div>
+            </div>
+          </div>
         </div>
       </InfoCard>
 
@@ -63,7 +61,7 @@ export default function DisneylandPage() {
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
-            Genie+ 앱으로 Lightning Lane 예약 권장
+            Lightning Multi Pass 앱으로 Lightning Lane 예약 권장
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#0F6E56] mt-0.5 flex-shrink-0">•</span>
@@ -92,22 +90,6 @@ export default function DisneylandPage() {
             디즈니랜드 공식 사이트
           </a>
         </div>
-      </InfoCard>
-
-      {/* Disneyland checklist */}
-      <InfoCard title="디즈니랜드 준비물 체크리스트">
-        <Checklist
-          storageKey="checklist-disneyland"
-          items={disneylandItems}
-        />
-      </InfoCard>
-
-      {/* General packing checklist */}
-      <InfoCard title="여행 전체 준비물">
-        <Checklist
-          storageKey="checklist-packing"
-          items={packingItems}
-        />
       </InfoCard>
     </div>
   )
