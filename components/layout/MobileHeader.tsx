@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 const navItems = [
   { emoji: '🗓', label: '전체 일정', href: '/' },
+  { emoji: '🎒', label: '준비물', href: '/packing' },
   { emoji: '✈️', label: '비행기표', href: '/flight' },
   { emoji: '🚗', label: 'Tesla Model Y', href: '/car' },
   { emoji: '📶', label: 'e-SIM', href: '/esim' },
@@ -24,6 +25,7 @@ type NavItem =
 
 const pageNames: Record<string, string> = {
   '/': '전체 일정',
+  '/packing': '준비물',
   '/flight': '비행기표',
   '/car': 'Tesla Model Y',
   '/esim': 'e-SIM',
