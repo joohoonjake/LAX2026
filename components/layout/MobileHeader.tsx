@@ -16,6 +16,7 @@ const navItems = [
   { emoji: '🏰', label: '디즈니랜드 호텔', href: '/disney-hotel' },
   { emoji: '🛫', label: '마지막날 숙소', href: '/airport-hotel' },
   { divider: '명소' },
+  { emoji: '🍽', label: '라호야 맛집', href: '/la-jolla-food' },
   { emoji: '🎢', label: '디즈니랜드', href: '/disneyland' },
 ] as const
 
@@ -31,6 +32,7 @@ const pageNames: Record<string, string> = {
   '/esim': 'e-SIM',
   '/joshua-tree': '조슈아 트리',
   '/la-jolla': '라호야',
+  '/la-jolla-food': '라호야 맛집',
   '/disney-hotel': '디즈니랜드 호텔',
   '/airport-hotel': '마지막날 숙소',
   '/disneyland': '디즈니랜드',
