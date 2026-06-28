@@ -504,6 +504,13 @@ export const laJollaSpots: { category: string; emoji: string; items: Spot[] }[] 
         tags: ['드라이브'],
         mapQuery: 'Roseland Drive, La Jolla, San Diego, CA',
       },
+      {
+        name: 'La Jolla Shores (라호야 쇼어스)',
+        desc: '라호야에서 가장 넓고 좋은 모래 해변. 빌리지에서 차로 잠깐 거리. 파도가 잔잔해 가족·물놀이에 좋고, 카약·패들보드 출발지로도 인기.',
+        tags: ['무료', '비치', '강추'],
+        free: true,
+        mapQuery: 'La Jolla Shores Beach, San Diego, CA',
+      },
     ],
   },
   {
@@ -511,8 +518,14 @@ export const laJollaSpots: { category: string; emoji: string; items: Spot[] }[] 
     emoji: '🌊',
     items: [
       {
+        name: 'La Jolla 씨케이브 카약 투어',
+        desc: '라호야의 시그니처 액티비티. 보통 동굴 근처(La Jolla Shores) 해변에서 출발하며, 바다가 다소 차고 거칠 수 있어요. 잔잔한 물을 원하면 코로나도(베이)나 미션 베이 카약이 좋은 대안.',
+        tags: ['액티비티', '카약'],
+        mapQuery: 'La Jolla Kayak, San Diego, CA',
+      },
+      {
         name: 'Sea Caves & The Cave Store',
-        desc: '케이브 스토어에서 티켓을 사면 긴 계단을 따라 바다 동굴 안으로 내려갈 수 있어요. 가게 앞 뷰포인트도 좋음.',
+        desc: '케이브 스토어에서 티켓을 사면 긴 계단을 따라 바다 동굴 안으로 내려갈 수 있어요. 가게 앞 뷰포인트도 좋음. 다만 관광지 성격이 강하고, 시기에 따라 동굴 내부 진입이 막혀 외부 관람만 가능할 때도 있어요.',
         tags: ['유료 입장', '동굴'],
         mapQuery: 'The Cave Store, La Jolla, San Diego, CA',
       },
@@ -629,4 +642,122 @@ export const laJollaTips: { emoji: string; text: string }[] = [
   { emoji: '🌊', text: '바다 동굴(Sea Caves)은 파도가 거칠 때가 있어요. 들어가기 전 근무 중인 라이프가드에게 물 상태를 꼭 확인하세요.' },
   { emoji: '🅿️', text: '윈댄시·코브 주변 주차가 꽉 차면 Mount Soledad에 올라가면 보통 자리가 있어요.' },
   { emoji: '🐠', text: 'Birch Aquarium은 작아서 1시간이면 충분 — 다른 수족관을 가봤다면 우선순위는 낮게 둬도 OK.' },
+  { emoji: '🌇', text: 'Cabrillo National Monument는 오후 5시에 닫고(트레일·타이드풀은 더 일찍) 공원 안에서는 선셋을 못 봐요. 선셋은 근처 Sunset Cliffs에서.' },
+  { emoji: '🦒', text: 'Safari Park는 시내에서 차로 ~50분, 하루가 꼬박 걸려요. 일정이 빠듯하면 Zoo로 충분.' },
+]
+
+// 출처: r/asksandiego "San Diego 4 day trip itinerary" 댓글 정리
+// 라호야를 베이스로 다녀올 만한 샌디에고 근처 명소
+export const sdNearby: { category: string; emoji: string; items: Spot[] }[] = [
+  {
+    category: '코로나도 (Coronado)',
+    emoji: '⛴',
+    items: [
+      {
+        name: 'Coronado Ferry & 자전거 라이딩',
+        desc: '다운타운에서 페리로 5분이면 코로나도. 선착장에서 자전거를 빌려 예쁜 집과 골목을 둘러보는 걸 추천(차로 가면 주차·교통이 번거로움). 선착장에서 Hotel Del까지 2.5km라 자전거나 우버가 편해요.',
+        tags: ['페리', '자전거'],
+        mapQuery: 'Coronado Ferry Landing, Coronado, CA',
+      },
+      {
+        name: 'Hotel del Coronado',
+        desc: '코로나도의 상징적인 빅토리아풍 리조트. 해변 산책과 사진 명소.',
+        tags: ['비치', '랜드마크'],
+        mapQuery: 'Hotel del Coronado, Coronado, CA',
+      },
+      {
+        name: '곤돌라 라이드 (The Gondola Company)',
+        desc: '코로나도 케이즈 운하에서 즐기는 로맨틱한 곤돌라. 샴페인·초콜릿 추가 가능. 기념일에 인기.',
+        tags: ['로맨틱', '예약'],
+        mapQuery: 'The Gondola Company, Coronado, CA',
+      },
+    ],
+  },
+  {
+    category: '포인트 로마 · 선셋 (Point Loma)',
+    emoji: '🌇',
+    items: [
+      {
+        name: 'Cabrillo National Monument',
+        desc: '베이와 바다를 한눈에 보는 전망과 타이드풀(조수 웅덩이). 단 공원은 오후 5시 폐장(트레일·타이드풀은 더 일찍)이라 일찍 가야 해요.',
+        tags: ['전망', '5시 폐장'],
+        mapQuery: 'Cabrillo National Monument, San Diego, CA',
+      },
+      {
+        name: 'Sunset Cliffs Natural Park',
+        desc: '태평양으로 지는 노을 명소. Cabrillo에서 시내로 돌아오는 길에 들르기 좋아요. 이른 아침도 멋짐.',
+        tags: ['무료', '선셋'],
+        free: true,
+        mapQuery: 'Sunset Cliffs Natural Park, San Diego, CA',
+      },
+      {
+        name: 'Liberty Station',
+        desc: '옛 해군기지를 개조한 복합문화공간(공방·식당·푸드홀). Gaslamp 대신 조용히 거닐기 좋은 대안.',
+        tags: ['산책', '푸드홀'],
+        mapQuery: 'Liberty Station, San Diego, CA',
+      },
+      {
+        name: 'Fort Rosecrans National Cemetery',
+        desc: '양옆으로 베이와 바다 전망이 펼쳐지는 드라이브 길. Cabrillo 가는 길에 지나가요.',
+        tags: ['무료', '드라이브'],
+        free: true,
+        mapQuery: 'Fort Rosecrans National Cemetery, San Diego, CA',
+      },
+    ],
+  },
+  {
+    category: '발보아 파크 · 다운타운',
+    emoji: '🦒',
+    items: [
+      {
+        name: 'Balboa Park & San Diego Zoo',
+        desc: '박물관·정원이 모인 대형 공원 + 세계적인 동물원. 하루 코스. 주차는 발보아 파크에 두면($10) 동물원 주차보다 저렴.',
+        tags: ['공원', '동물원'],
+        mapQuery: 'Balboa Park, San Diego, CA',
+      },
+      {
+        name: 'USS Midway Museum',
+        desc: '항공모함 박물관. 제대로 보려면 5시간 이상 걸리기도 해요.',
+        tags: ['박물관'],
+        mapQuery: 'USS Midway Museum, San Diego, CA',
+      },
+      {
+        name: 'Embarcadero & Seaport Village',
+        desc: 'Rady Shell에서 베이를 따라 Star of India까지 걷는 산책로. 중간에 Seaport Village. Gaslamp보다 한적한 산책 대안.',
+        tags: ['무료', '산책'],
+        free: true,
+        mapQuery: 'Seaport Village, San Diego, CA',
+      },
+      {
+        name: 'Barrio Logan & Chicano Park',
+        desc: '치카노 벽화로 유명한 동네. 로컬 타코(Fish Guts), 서점(Libelula), 기념품. 호불호는 갈리지만 독특한 로컬 감성과 예술이 매력.',
+        tags: ['아트', '로컬'],
+        mapQuery: 'Chicano Park, Barrio Logan, San Diego, CA',
+      },
+      {
+        name: 'Old Town State Historic Park',
+        desc: '옛 멕시코풍 역사지구. 평은 호불호가 있어 가볍게 점심 정도(Old Town Mexican Cafe·Cafe Coyote) 추천. 주차 무료.',
+        tags: ['역사', '점심'],
+        mapQuery: 'Old Town San Diego State Historic Park, San Diego, CA',
+      },
+    ],
+  },
+  {
+    category: '노스 카운티 (North County)',
+    emoji: '🚆',
+    items: [
+      {
+        name: 'Oceanside (The Plot)',
+        desc: '올드스쿨 감성의 비치타운. 다운타운에서 기차로 ~1시간(또는 차로 약 40마일, 교통 주의). 비건 레스토랑 The Plot이 추천.',
+        tags: ['비치타운', '기차'],
+        mapQuery: 'Oceanside, CA',
+      },
+      {
+        name: 'Encinitas · Moonlight Beach',
+        desc: '노스 카운티 가는 길에 들르기 좋은 해변 마을. 근처 Peace Pies(raw 비건)도 독특해요.',
+        tags: ['비치'],
+        mapQuery: 'Moonlight Beach, Encinitas, CA',
+      },
+    ],
+  },
 ]

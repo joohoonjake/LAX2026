@@ -1,5 +1,5 @@
 import InfoCard from '@/components/ui/InfoCard'
-import { laJollaSpots, laJollaTips, type Spot } from '@/data/travel'
+import { laJollaSpots, laJollaTips, sdNearby, type Spot } from '@/data/travel'
 
 function mapsUrl(query: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`
@@ -59,7 +59,7 @@ export default function LaJollaTodoPage() {
           </h1>
         </div>
         <p className="text-sm text-neutral-500">
-          뷰포인트·산책·동굴·건축·먹거리까지 현지인 추천 정리
+          라호야 명소부터 근처 샌디에고 데이트립까지 현지인 추천 정리
         </p>
         <div className="flex flex-wrap gap-2">
           <span className="inline-flex items-center gap-1.5 bg-neutral-50 border border-neutral-200 rounded-full px-3 py-1 text-xs text-neutral-700">
@@ -77,8 +77,8 @@ export default function LaJollaTodoPage() {
           <span className="flex-shrink-0">💬</span>
           <p>
             Reddit{' '}
-            <span className="font-medium text-neutral-800">r/asksandiego</span>의 &ldquo;라호야에서 꼭
-            봐야 할 곳&rdquo; 글의 댓글을 정리했어요. 각 항목의{' '}
+            <span className="font-medium text-neutral-800">r/asksandiego</span>의 라호야·샌디에고 여행
+            추천 글들의 댓글을 정리했어요. 각 항목의{' '}
             <span className="text-[#0F6E56] font-medium">📍 지도</span> 버튼을 누르면 구글 지도로 바로
             연결됩니다.
           </p>
@@ -97,8 +97,29 @@ export default function LaJollaTodoPage() {
         </div>
       </InfoCard>
 
-      {/* Categories */}
+      {/* La Jolla categories */}
       {laJollaSpots.map((group) => (
+        <InfoCard key={group.category} title={`${group.emoji} ${group.category}`}>
+          <div className="divide-y divide-neutral-100">
+            {group.items.map((s) => (
+              <SpotRow key={s.name} s={s} />
+            ))}
+          </div>
+        </InfoCard>
+      ))}
+
+      {/* Nearby San Diego day trips */}
+      <div className="pt-2">
+        <div className="flex items-center gap-2 mb-1">
+          <h2 className="text-lg font-semibold tracking-tight text-neutral-900">
+            🚗 라호야 근처 · 샌디에고 데이트립
+          </h2>
+        </div>
+        <p className="text-sm text-neutral-500">
+          숙소를 베이스로 차로 다녀올 만한 곳들 (코로나도·포인트로마·발보아·노스카운티)
+        </p>
+      </div>
+      {sdNearby.map((group) => (
         <InfoCard key={group.category} title={`${group.emoji} ${group.category}`}>
           <div className="divide-y divide-neutral-100">
             {group.items.map((s) => (
