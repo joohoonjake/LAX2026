@@ -434,3 +434,199 @@ export const vegFriendly: { label: string; items: string[] }[] = [
   { label: '멕시칸', items: ['El Agave', 'Puesto'] },
   { label: '브런치', items: ['The Cottage', 'Sugar n Scribe', 'Madison'] },
 ]
+
+export type Spot = {
+  name: string
+  desc: string
+  tags?: string[]
+  mapQuery?: string
+  free?: boolean
+}
+
+// 출처: r/asksandiego "Thing/places that really need to be seen in La Jolla?"
+// 댓글 추천 정리 — 라호야에서 해볼 것 / 가볼 곳
+export const laJollaSpots: { category: string; emoji: string; items: Spot[] }[] = [
+  {
+    category: '자연 · 뷰포인트 · 산책',
+    emoji: '🌅',
+    items: [
+      {
+        name: 'Torrey Pines Gliderport (글라이더포트)',
+        desc: '해발 약 350피트(107m) 절벽 위. 캘리포니아 최고의 오션뷰라는 평이 많음. 행글라이더·패러글라이더 이착륙 장면을 볼 수 있고, 위에 괜찮은 델리도 있어요. 선셋 명소. 주차 무료.',
+        tags: ['무료', '선셋', '오션뷰'],
+        free: true,
+        mapQuery: 'Torrey Pines Gliderport, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'La Jolla Cove → Marine Street Beach 해안 산책',
+        desc: '라호야 코브에서 마린 스트리트 비치까지 이어지는 해안길. "캘리포니아에서 가장 아름다운 해안 산책 중 하나"라는 강력 추천이 여러 개.',
+        tags: ['무료', '강추', '산책'],
+        free: true,
+        mapQuery: 'La Jolla Cove, San Diego, CA',
+      },
+      {
+        name: 'Coast Walk Trail',
+        desc: '환상적인 뷰에 사람은 적은 숨은 코스. Park Row 끝(주차 몇 자리 있음)에서 시작해 양방향 어느 쪽으로든 걸으면 됨.',
+        tags: ['무료', '한적'],
+        free: true,
+        mapQuery: 'Coast Walk Trail, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'Scripps Coastal Reserve Biodiversity Trail',
+        desc: '쉬운 산책에 숨막히는 뷰. 머리 위로 행글라이더가 지나가며, 가끔 손을 흔들어 주기도 해요.',
+        tags: ['무료', '쉬운 코스'],
+        free: true,
+        mapQuery: 'Scripps Coastal Reserve, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'Torrey Pines State Natural Reserve',
+        desc: '주립 자연보호구역의 네이처 트레일. 해안 절벽과 희귀한 토레이 소나무 숲.',
+        tags: ['트레일'],
+        mapQuery: 'Torrey Pines State Natural Reserve, San Diego, CA',
+      },
+      {
+        name: 'Mount Soledad (마운트 솔레다드)',
+        desc: '정상에서 샌디에고 거의 전체를 조망. 윈댄시 주차가 꽉 차면 여기로 올라오면 보통 자리가 있어요.',
+        tags: ['무료', '파노라마 뷰'],
+        free: true,
+        mapQuery: 'Mount Soledad National Veterans Memorial, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'Windansea Beach (윈댄시)',
+        desc: 'Nautilus St 끝에 위치. 샌드위치 사가서 서퍼들 구경하기 좋은 곳. 주차는 빡빡한 편 — 안 되면 솔레다드로.',
+        tags: ['무료', '서핑', '비치'],
+        free: true,
+        mapQuery: 'Windansea Beach, La Jolla, San Diego, CA',
+      },
+      {
+        name: '언덕 드라이브 & Munchkin House',
+        desc: 'La Jolla Parkway 건너 언덕(Roseland Dr, Hillside Dr 등)으로 올라가면 대저택과 뷰가 펼쳐져요. 유명한 "먼치킨 하우스"도 찾아보기.',
+        tags: ['드라이브'],
+        mapQuery: 'Roseland Drive, La Jolla, San Diego, CA',
+      },
+    ],
+  },
+  {
+    category: '바다 · 동물 · 동굴',
+    emoji: '🌊',
+    items: [
+      {
+        name: 'Sea Caves & The Cave Store',
+        desc: '케이브 스토어에서 티켓을 사면 긴 계단을 따라 바다 동굴 안으로 내려갈 수 있어요. 가게 앞 뷰포인트도 좋음.',
+        tags: ['유료 입장', '동굴'],
+        mapQuery: 'The Cave Store, La Jolla, San Diego, CA',
+      },
+      {
+        name: "Children's Pool (칠드런스 풀)",
+        desc: '바다사자·물범을 가까이서 볼 수 있는 인공 만(灣). 동물 보호를 위해 시즌엔 출입 제한이 있을 수 있어요.',
+        tags: ['무료', '동물'],
+        free: true,
+        mapQuery: "Children's Pool Beach, La Jolla, San Diego, CA",
+      },
+    ],
+  },
+  {
+    category: '문화 · 건축 · 쇼핑',
+    emoji: '🏛',
+    items: [
+      {
+        name: 'Birch Aquarium',
+        desc: '작은 수족관으로 1시간이면 충분. 스킵해도 된다는 의견이 많고 성인 입장료 약 $30로 비싼 편. 단 2024년 5월 리노베이션 완료로 새 전시가 생겼어요.',
+        tags: ['선택', '$30'],
+        mapQuery: 'Birch Aquarium at Scripps, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'UCSD 캠퍼스 건축',
+        desc: '역피라미드 모양의 Geisel Library, Jacobs Hall 위에 아슬아슬하게 얹힌 작은 오두막 Fallen Star가 명물. 글라이더포트에 주차하고 캠퍼스를 걸어도 돼요.',
+        tags: ['무료', '건축'],
+        free: true,
+        mapQuery: 'Geisel Library, UC San Diego, La Jolla, CA',
+      },
+      {
+        name: 'Salk Institute (살크 인스티튜트)',
+        desc: 'Louis Kahn의 걸작 건축. 외부는 자유롭게 둘러볼 수 있고, 내부 가이드 투어는 사전 예약 필요. 글라이더포트 바로 옆.',
+        tags: ['건축', '외부 무료'],
+        mapQuery: 'Salk Institute for Biological Studies, La Jolla, CA',
+      },
+      {
+        name: 'MOCA La Jolla (현대미술관)',
+        desc: '바다를 마주한 현대미술관. 기프트샵이 특히 좋다는 추천.',
+        tags: ['미술관'],
+        mapQuery: 'Museum of Contemporary Art San Diego, La Jolla, CA',
+      },
+      {
+        name: 'Athenaeum & JAI 콘서트',
+        desc: '클래식·재즈 등 콘서트가 열리는 곳. 월요일 정오 콘서트는 무료. JAI는 서퍼클럽처럼 꾸며진 멋진 공연장.',
+        tags: ['공연', '월요일 무료'],
+        mapQuery: 'Athenaeum Music & Arts Library, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'Girard Avenue 쇼핑 & Warwick’s 서점',
+        desc: '메인 거리 Girard Ave를 따라 상점 구경. Warwick’s는 현지인이 가장 사랑하는 서점.',
+        tags: ['쇼핑'],
+        mapQuery: "Warwick's, Girard Avenue, La Jolla, San Diego, CA",
+      },
+      {
+        name: 'Sunday Farmer’s Market',
+        desc: '일요일 파머스 마켓 — 들를 만한 가치가 있어요.',
+        tags: ['일요일'],
+        mapQuery: 'La Jolla Open Aire Market, San Diego, CA',
+      },
+    ],
+  },
+  {
+    category: '먹거리 · 카페',
+    emoji: '🍦',
+    items: [
+      {
+        name: 'Bobboi Natural Gelato',
+        desc: '라호야 젤라토 맛집. 댓글에서 여러 번 추천.',
+        tags: ['디저트', '강추'],
+        mapQuery: 'Bobboi Natural Gelato, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'The Cottage',
+        desc: '브런치/아침 추천 스폿.',
+        tags: ['브런치'],
+        mapQuery: 'The Cottage La Jolla, San Diego, CA',
+      },
+      {
+        name: 'Bird Rock Coffee Roasters',
+        desc: '"믿기지 않게 맛있는" 커피. 자가 로스팅.',
+        tags: ['커피'],
+        mapQuery: 'Bird Rock Coffee Roasters, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'The Living Room Coffeehouse',
+        desc: '쇼핑 중 커피 한잔하기 좋은 곳.',
+        tags: ['커피'],
+        mapQuery: 'The Living Room Coffeehouse, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'El Pescador Fish Market',
+        desc: 'Taco Stand 건너편의 씨푸드 맛집. 줄 서는 타코 스탠드 대신 여기를 추천하는 댓글도.',
+        tags: ['씨푸드'],
+        mapQuery: 'El Pescador Fish Market, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'The Taco Stand',
+        desc: '멕시칸 자체는 맛있지만 피크타임엔 줄이 한 블록. 갈 거면 시간대를 피하세요. (대안: Don Carlos, Rigobertos 등)',
+        tags: ['멕시칸', '대기 주의'],
+        mapQuery: 'The Taco Stand, La Jolla, San Diego, CA',
+      },
+      {
+        name: 'Puesto',
+        desc: '인기 있는 모던 멕시칸.',
+        tags: ['멕시칸'],
+        mapQuery: 'Puesto La Jolla, San Diego, CA',
+      },
+    ],
+  },
+]
+
+export const laJollaTips: { emoji: string; text: string }[] = [
+  { emoji: '🌙', text: '라호야 중심가는 해가 지면 대부분 한산해져요. 저녁/디너는 다른 동네에서 즐기는 것도 방법.' },
+  { emoji: '🌊', text: '바다 동굴(Sea Caves)은 파도가 거칠 때가 있어요. 들어가기 전 근무 중인 라이프가드에게 물 상태를 꼭 확인하세요.' },
+  { emoji: '🅿️', text: '윈댄시·코브 주변 주차가 꽉 차면 Mount Soledad에 올라가면 보통 자리가 있어요.' },
+  { emoji: '🐠', text: 'Birch Aquarium은 작아서 1시간이면 충분 — 다른 수족관을 가봤다면 우선순위는 낮게 둬도 OK.' },
+]
